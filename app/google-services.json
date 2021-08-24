@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "65305571597",
+    "project_id": "edcan-vacation-project-dd88d",
+    "storage_bucket": "edcan-vacation-project-dd88d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65305571597:android:a5b5580607e39374f94044",
+        "android_client_info": {
+          "package_name": "com.example.a2021edcanvacationproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65305571597-3liqitld3d0s8j8uk7fbjavqdtpl38b5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0SiCZ0iQ13Ft-QF8GgTHWrVS25UYYAcs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "65305571597-3liqitld3d0s8j8uk7fbjavqdtpl38b5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
