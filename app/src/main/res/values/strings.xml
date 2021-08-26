@@ -1,3 +1,7 @@
 <resources>
+<<<<<<< HEAD
     <string name="app_name">2021 EDCAN Vacation Project</string>
+=======
+    <string name="app_name">2021 EDCAN Vacative Project</string>
+>>>>>>> b6bbc2ef6955545d9f36abb9ea6dd5436cf08449
 </resources>

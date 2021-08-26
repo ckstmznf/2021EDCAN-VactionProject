@@ -1,17 +1,26 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+<<<<<<< HEAD
     id 'kotlin-kapt'
 }
 
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
+=======
+}
+
+>>>>>>> b6bbc2ef6955545d9f36abb9ea6dd5436cf08449
 android {
     compileSdk 31
 
     defaultConfig {
+<<<<<<< HEAD
         applicationId "com.example.a2021edcanvacationproject"
+=======
+        applicationId "com.example.a2021edcanvacativeproject"
+>>>>>>> b6bbc2ef6955545d9f36abb9ea6dd5436cf08449
         minSdk 28
         targetSdk 31
         versionCode 1
@@ -33,6 +42,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+<<<<<<< HEAD
 
     dataBinding{
         enabled = true
@@ -46,6 +56,11 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-auth:7.2.0' //auth
     implementation 'com.google.firebase:firebase-firestore-ktx' //firestore
 
+=======
+}
+
+dependencies {
+>>>>>>> b6bbc2ef6955545d9f36abb9ea6dd5436cf08449
 
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'

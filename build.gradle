@@ -5,9 +5,12 @@ buildscript {
         mavenCentral()
     }
     dependencies {
+<<<<<<< HEAD
         //Firebase
         classpath 'com.google.gms:google-services:4.3.10'
 
+=======
+>>>>>>> b6bbc2ef6955545d9f36abb9ea6dd5436cf08449
         classpath "com.android.tools.build:gradle:7.0.0"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20"
 
