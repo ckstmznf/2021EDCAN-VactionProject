@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">2021EDCAN VactionProject</string>
+    <string name="app_name">EDHAM</string>
+
+    <string-array name="exercise">
+        <item>스쿼트</item>
+        <item>플랭크</item>
+        <item>조깅</item>
+        <item>양궁</item>
+        <item>팔번려 높이 뛰기</item>
+    </string-array>
 </resources>
