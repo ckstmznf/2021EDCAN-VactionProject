@@ -22,6 +22,7 @@ val gson = GsonBuilder().create()
 
 
 lateinit var todoData : MutableList<Todo>
+lateinit var adapter : TodoListAdapter
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
@@ -34,9 +35,9 @@ class MainActivity : AppCompatActivity() {
         editor = pref.edit()
 
 
-        binding.btnMainLog.setOnClickListener {
-            Log.d("todo", getData().toString())
-        }
+//        binding.btnMainLog.setOnClickListener {
+//            Log.d("todo", getData().toString())
+//        }
 
         binding.btnMainAddTodo.setOnClickListener {
             val intent = Intent(this, AddTodoActivity::class.java)
@@ -46,15 +47,14 @@ class MainActivity : AppCompatActivity() {
 
         todoData = getDataDay()
         Log.d("todoData", todoData.toString())
-        var adapter = TodoListAdapter(todoData)
-
-//        if (todoData.size > 0) {    //데이타가 추가, 수정되었을때
-//            adapter.notifyDataSetChanged();
-//        } else {    //뷰에 표시될 데이타가 없을때
-//            adapter.notifyDataSetInvalidated();
-//        }
+        adapter = TodoListAdapter(todoData)
 
 
+        if (todoData.size > 0) {    //데이타가 추가, 수정되었을때
+            adapter.notifyDataSetChanged();
+        } else {    //뷰에 표시될 데이타가 없을때
+            adapter.notifyDataSetInvalidated();
+        }
         binding.listViewMainTodolist.adapter = adapter
     }
 }
