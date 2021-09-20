@@ -1,14 +1,21 @@
 package com.example.a2021edcanvactionproject.model
 
+import android.app.Activity
+import android.content.SharedPreferences
 import android.util.Log
-import com.example.a2021edcanvactionproject.editor
-import com.example.a2021edcanvactionproject.gson
-import com.example.a2021edcanvactionproject.pref
+import com.google.gson.GsonBuilder
 import org.json.JSONArray
 import org.json.JSONObject
 import java.time.LocalDate
 import java.time.LocalTime
 import kotlin.random.Random
+
+
+
+
+lateinit var pref : SharedPreferences
+lateinit var editor : SharedPreferences.Editor
+val gson = GsonBuilder().create()
 
 fun getData(): JSONObject {
     val date = LocalDate.now()

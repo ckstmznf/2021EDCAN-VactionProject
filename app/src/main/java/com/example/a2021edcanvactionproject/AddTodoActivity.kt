@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
 import com.example.a2021edcanvactionproject.databinding.ActivityAddTodoBinding
-import com.example.a2021edcanvactionproject.model.Todo
-import com.example.a2021edcanvactionproject.model.addTodoData
-import com.example.a2021edcanvactionproject.model.getData
-import com.example.a2021edcanvactionproject.model.getDataDay
+import com.example.a2021edcanvactionproject.model.*
 
 //import com.example.a2021edcanvactionproject.model.addTodoData
 
@@ -27,11 +24,12 @@ class AddTodoActivity : AppCompatActivity() {
 
             val todo = Todo(kind, true, set)
 
-
-
-            todoData.add(todo)
-            adapter.notifyDataSetChanged();
             addTodoData(todoData = todo)
+
+
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("todoData", gson.toJson(todo))
+            setResult(RESULT_OK, intent)
             finish()
         }
 

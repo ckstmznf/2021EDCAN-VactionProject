@@ -22,22 +22,24 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
 
-        android:src="@drawable/bg_filter"
         android:scaleType="centerCrop"
+        android:src="@drawable/bg_filter"
 
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
+
+
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_splash_line1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="402dp"
-        />
+        app:layout_constraintGuide_begin="460dp" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_splash_line2"
         android:layout_width="wrap_content"
@@ -47,6 +49,20 @@
         app:layout_constraintGuide_begin="56dp"
         />
 
+    <ImageView
+        android:layout_width="5dp"
+        android:layout_height="0dp"
+        android:background="@drawable/splash_vc"
+
+        android:layout_marginTop="10dp"
+
+        app:layout_constraintTop_toTopOf="@id/txt_splash_title1"
+        app:layout_constraintBottom_toBottomOf="@id/txt_splash_title5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guide_splash_line2"
+
+        app:layout_constraintHorizontal_bias="0.6"
+        />
 
     <TextView
         android:id="@+id/txt_splash_title1"
