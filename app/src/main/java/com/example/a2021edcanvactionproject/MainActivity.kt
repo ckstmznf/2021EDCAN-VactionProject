@@ -21,14 +21,17 @@ import com.google.gson.GsonBuilder
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
 
-    val todoData = getDataDay()
+    private val todoData = getDataDay()
+    private val adapter = TodoListAdapter(todoData)
 
-    val todoAddResultCallback = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+    private val todoAddResultCallback = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
         if(it.resultCode == RESULT_OK){
             val todoJson = it.data!!.getStringExtra("todoData").toString()
-//            Log.d("todo get", todoJson)
+            Log.d("todo get", todoJson)
             val todo = gson.fromJson(todoJson, Todo::class.java)
-            todoData.add(todo)
+            adapter.items.add(todo)
+            adapter.notifyDataSetChanged()
+            binding.title = "오늘 계획 ${todoData.size}개"
         }
     }
 
@@ -39,8 +42,9 @@ class MainActivity : AppCompatActivity() {
 
         ActivityClickEvent()
 
-        val adapter = TodoListAdapter(todoData)
         binding.title = "오늘 계획 ${todoData.size}개"
+
+
 
         binding.recycleMainTodoList.adapter = adapter
         binding.recycleMainTodoList.addItemDecoration(TodoListDecoration(100))
@@ -64,6 +68,8 @@ class MainActivity : AppCompatActivity() {
 
             btnMainLog.setOnClickListener {
                 Log.d("todoLog", getData().toString())
+                Log.d("todoLog todoData", todoData.toString())
+                Log.d("todoLog adapter", adapter.items.toString())
             }
         }
     }
