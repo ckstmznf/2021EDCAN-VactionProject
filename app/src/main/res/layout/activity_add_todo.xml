@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
 
             android:orientation="horizontal"
-
+            android:visibility="gone"
 
             app:layout_constraintTop_toBottomOf="@id/btn_addTodo_setTime"
             app:layout_constraintStart_toStartOf="parent"
@@ -134,7 +134,7 @@
 
             android:hint="세트 입력"
             android:textSize="18sp"
-            android:visibility="invisible"
+            android:visibility="visible"
 
             app:layout_constraintTop_toBottomOf="@+id/btn_addTodo_setSet"
             app:layout_constraintStart_toStartOf="parent"
