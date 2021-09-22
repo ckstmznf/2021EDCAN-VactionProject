@@ -66,5 +66,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("todoLog adapter", adapter.items.toString())
             }
         }
+
+
     }
 }
