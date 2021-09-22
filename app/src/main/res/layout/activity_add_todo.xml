@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".AddTodoActivity">
+        tools:context=".Activity.AddTodo.AddTodoActivity">
 
 
         <!--   Background     -->
@@ -19,23 +19,45 @@
             android:layout_height="0dp"
 
             android:src="@drawable/bg3"
-            android:tint="#68000000"
+            android:scaleType="fitXY"
+            android:tint="#77000000"
 
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             />
+
          <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
 
             android:src="@drawable/bg_filter"
+             android:scaleType="fitXY"
 
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_addTodo_line1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="37dp"
+            />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_addTodo_line2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="37dp"
             />
 
 
@@ -44,12 +66,17 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-
             android:entries="@array/exercise"
-            android:textSize="32sp"
+            android:textSize="18sp"
+
+            android:background="@drawable/choice_spinner_bg"
+
+            android:paddingVertical="11dp"
+            android:layout_marginTop="130dp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guide_addTodo_line1"
+            app:layout_constraintEnd_toEndOf="@id/guide_addTodo_line2"
             />
 
         <Button
@@ -60,8 +87,13 @@
             android:text="시간"
             android:textSize="18dp"
 
+            android:background="@color/main_button"
+
+            android:layout_marginTop="43dp"
+            android:layout_marginEnd="12dp"
+
             app:layout_constraintTop_toBottomOf="@+id/spin_addTodo_choice"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guide_addTodo_line1"
             app:layout_constraintEnd_toStartOf="@id/btn_addTodo_setSet"
             />
 
@@ -73,9 +105,13 @@
             android:text="세트"
             android:textSize="18dp"
 
-            app:layout_constraintTop_toBottomOf="@+id/spin_addTodo_choice"
+            android:background="@color/main_button"
+
+            android:layout_marginStart="12dp"
+
+            app:layout_constraintTop_toTopOf="@id/btn_addTodo_setTime"
             app:layout_constraintStart_toEndOf="@id/btn_addTodo_setTime"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guide_addTodo_line2"
             />
 
 
@@ -87,12 +123,15 @@
             android:layout_height="wrap_content"
 
             android:orientation="horizontal"
-            android:visibility="gone"
+            android:visibility="visible"
+
+            android:layout_marginTop="33dp"
 
             app:layout_constraintTop_toBottomOf="@id/btn_addTodo_setTime"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guide_addTodo_line1"
+            app:layout_constraintEnd_toEndOf="@id/guide_addTodo_line2"
             >
+            <!--
             <EditText
                 android:id="@+id/edt_addTodo_timeH"
                 android:layout_width="0dp"
@@ -101,10 +140,12 @@
                 android:hint="시 입력"
                 android:textSize="18sp"
 
+                android:background="@color/main_button"
+                android:paddingVertical="10dp"
+
                 android:layout_weight="1"
                 />
-
-            android:layout_weight="1"
+            -->
             <EditText
                 android:id="@+id/edt_addTodo_timeM"
                 android:layout_width="0dp"
@@ -112,6 +153,10 @@
 
                 android:hint="분 입력"
                 android:textSize="18sp"
+
+                android:layout_marginHorizontal="12dp"
+                android:background="@color/main_button"
+                android:paddingVertical="10dp"
 
                 android:layout_weight="1"
                 />
@@ -122,6 +167,10 @@
 
                 android:hint="초 입력"
                 android:textSize="18sp"
+
+                android:layout_marginHorizontal="12dp"
+                android:background="@color/main_button"
+                android:paddingVertical="10dp"
 
                 android:layout_weight="1"
                 />
@@ -134,11 +183,14 @@
 
             android:hint="세트 입력"
             android:textSize="18sp"
-            android:visibility="visible"
+            android:visibility="invisible"
 
-            app:layout_constraintTop_toBottomOf="@+id/btn_addTodo_setSet"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/main_button"
+            android:paddingVertical="10dp"
+
+            app:layout_constraintTop_toTopOf="@id/linear_addTodo_inputTime"
+            app:layout_constraintStart_toStartOf="@id/guide_addTodo_line1"
+            app:layout_constraintEnd_toEndOf="@id/guide_addTodo_line2"
             />
 
 
@@ -148,12 +200,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-
             android:text="완료"
             android:textSize="32sp"
+
+            app:layout_constraintStart_toStartOf="@id/guide_addTodo_line1"
+            app:layout_constraintEnd_toEndOf="@id/guide_addTodo_line2"
+            app:layout_constraintBottom_toBottomOf="parent"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,21 +1,15 @@
-package com.example.a2021edcanvactionproject
+package com.example.a2021edcanvactionproject.Activity.Main
 
-import android.app.Activity
 import android.content.Intent
-import android.content.SharedPreferences
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Adapter
-import android.widget.ArrayAdapter
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
+import com.example.a2021edcanvactionproject.Activity.AddTodo.AddTodoActivity
+import com.example.a2021edcanvactionproject.R
 import com.example.a2021edcanvactionproject.databinding.ActivityMainBinding
 import com.example.a2021edcanvactionproject.model.*
-import com.google.gson.GsonBuilder
-
-
 
 
 class MainActivity : AppCompatActivity() {

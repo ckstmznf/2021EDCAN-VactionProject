@@ -2,6 +2,7 @@
     <string name="app_name">EDHAM</string>
 
     <string-array name="exercise">
+        <item>운동 종류</item>
         <item>스쿼트</item>
         <item>플랭크</item>
         <item>조깅</item>

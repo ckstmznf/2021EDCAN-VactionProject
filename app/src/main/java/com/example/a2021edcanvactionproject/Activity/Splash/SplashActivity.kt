@@ -1,11 +1,12 @@
-package com.example.a2021edcanvactionproject
+package com.example.a2021edcanvactionproject.Activity.Splash
 
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.coroutines.delay
 import android.content.Intent
 import android.os.Handler
+import com.example.a2021edcanvactionproject.Activity.Main.MainActivity
+import com.example.a2021edcanvactionproject.R
 import com.example.a2021edcanvactionproject.model.editor
 import com.example.a2021edcanvactionproject.model.pref
 

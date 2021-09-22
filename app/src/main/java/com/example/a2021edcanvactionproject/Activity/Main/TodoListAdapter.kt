@@ -1,10 +1,11 @@
-package com.example.a2021edcanvactionproject
+package com.example.a2021edcanvactionproject.Activity.Main
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.a2021edcanvactionproject.R
 import com.example.a2021edcanvactionproject.model.Todo
 
 class TodoListAdapter(val items: MutableList<Todo>) : RecyclerView.Adapter<TodoListAdapter.TodoListViewHolder>() {
