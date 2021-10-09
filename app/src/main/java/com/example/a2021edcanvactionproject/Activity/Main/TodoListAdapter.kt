@@ -1,19 +1,14 @@
 package com.example.a2021edcanvactionproject.Activity.Main
 
-import android.app.Application
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.a2021edcanvactionproject.Activity.TodoData.TodoDataActivity
+import com.example.a2021edcanvactionproject.Activity.TodoDetail.TodoDetailActivity
 import com.example.a2021edcanvactionproject.R
 import com.example.a2021edcanvactionproject.model.Todo
-import com.example.a2021edcanvactionproject.model.gson
-import kotlin.coroutines.coroutineContext
 
 class TodoListAdapter(val items: MutableList<Todo>) : RecyclerView.Adapter<TodoListAdapter.TodoListViewHolder>() {
     class TodoListViewHolder(val view : View) : RecyclerView.ViewHolder(view) {
@@ -31,7 +26,7 @@ class TodoListAdapter(val items: MutableList<Todo>) : RecyclerView.Adapter<TodoL
 
 
         holder.view.setOnClickListener {
-            val intent = Intent(parent.context, TodoDataActivity::class.java)
+            val intent = Intent(parent.context, TodoDetailActivity::class.java)
             intent.putExtra("todoData", items[holder.adapterPosition])
 
             parent.context.startActivity(intent)

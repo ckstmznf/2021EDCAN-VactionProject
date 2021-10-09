@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
-            android:name=".Activity.TodoData.TodoDataActivity"
+            android:name=".Activity.TodoDetail.TodoDetailActivity"
             android:exported="true" />
         <activity
             android:name=".Activity.Splash.SplashActivity"
