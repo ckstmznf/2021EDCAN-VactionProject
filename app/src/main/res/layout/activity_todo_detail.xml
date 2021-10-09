@@ -7,7 +7,6 @@
         <variable
             name="kind"
             type="String" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
