@@ -84,29 +84,41 @@ class AddTodoActivity : AppCompatActivity() {
     private fun saveTodoData() {
         var kind : String
         var set : String
+        var setCount : String
         var timeM : String
         var timeS : String
 
         with(binding){
             kind = spinAddTodoChoice.selectedItem.toString();
             set = edtAddTodoSet.text.toString()// as Int
+            setCount = edtAddTodoSetCount.text.toString()
             timeM = edtAddTodoTimeM.text.toString()
             timeS = edtAddTodoTimeS.text.toString()
+
+
+            if(kind == "운동 종류"){
+                Toast.makeText(this@AddTodoActivity, "운동 종류를 선택해주세요.", Toast.LENGTH_LONG).show()
+                return
+            }
+            if(!choiceSetTime && set.isEmpty()){
+                edtAddTodoSet.error = "세트를 입력하세요."
+                return
+            }
+            if (!choiceSetTime && setCount.isEmpty()){
+                edtAddTodoSetCount.error = "한세트당 할 개수를 입력하세요."
+                return
+            }
+            if(choiceSetTime && timeM == ""){
+                edtAddTodoTimeM.error = "운동할 시간을 입력하세요."
+                return
+            }
+            if(choiceSetTime && timeS == ""){
+                edtAddTodoTimeS.error = "운동할 시간을 입력하세요."
+                return
+            }
         }
 
-        if(kind == "운동 종류"){
-            Toast.makeText(this@AddTodoActivity, "운동 종류를 선택해주세요.", Toast.LENGTH_LONG).show()
-            return
-        }   else if(!choiceSetTime && set.isEmpty()){
-            binding.edtAddTodoSet.error = "세트를 입력하세요."
-            return
-        }   else if(choiceSetTime && timeM == ""){
-            binding.edtAddTodoTimeM.error = "운동할 시간을 입력하세요."
-            return
-        }   else if(choiceSetTime && timeS == ""){
-            binding.edtAddTodoTimeS.error = "운동할 시간을 입력하세요."
-            return
-        }
+
 
 
         val todo = Todo(
@@ -118,6 +130,7 @@ class AddTodoActivity : AppCompatActivity() {
             todo.time = Time(timeM.toInt(), timeS.toInt())
         }   else{
             todo.set = set.toInt()
+            todo.setCount = setCount.toInt()
         }
 
         addTodoData(todoData = todo)
