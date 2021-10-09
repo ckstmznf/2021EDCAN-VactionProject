@@ -6,7 +6,7 @@ import java.time.LocalTime
 data class Time(
     val mine: Int,
     val second: Int,
-)
+) : Serializable
 
 data class Todo(
     val kind : String,
@@ -20,4 +20,4 @@ data class Todo(
     val alarm : Boolean = false,
     val alarmTime : LocalTime? = null,
     val completion : Boolean = false
-)
+) : Serializable

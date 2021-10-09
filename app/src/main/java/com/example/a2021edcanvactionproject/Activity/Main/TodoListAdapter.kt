@@ -31,11 +31,8 @@ class TodoListAdapter(val items: MutableList<Todo>) : RecyclerView.Adapter<TodoL
 
 
         holder.view.setOnClickListener {
-            val clickItem = items[holder.adapterPosition]
-            val clickItemJson = gson.toJson(clickItem)
-
             val intent = Intent(parent.context, TodoDataActivity::class.java)
-            intent.putExtra("todoData", clickItemJson)
+            intent.putExtra("todoData", items[holder.adapterPosition])
 
             parent.context.startActivity(intent)
         }

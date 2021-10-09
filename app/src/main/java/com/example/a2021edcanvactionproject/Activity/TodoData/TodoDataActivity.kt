@@ -16,10 +16,8 @@ class TodoDataActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_todo_data)
 
-        val todoData = gson.fromJson(intent.getStringExtra("todoData"), Todo::class.java)
-        Log.d("todoData", todoData.toString())
-        Log.d("todoData Kind", todoData.kind)
-
-        binding.kind = todoData.kind
+        val todo = intent.getSerializableExtra("todoData") as Todo
+//        Log.d("todoData Kind", todo.kind)
+        binding.kind = todo.kind
     }
 }

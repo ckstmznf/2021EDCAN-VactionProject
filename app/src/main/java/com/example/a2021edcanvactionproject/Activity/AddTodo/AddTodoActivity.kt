@@ -74,9 +74,9 @@ class AddTodoActivity : AppCompatActivity() {
 
             val totalCount = set.toInt() * setCount.toInt()
 
-            Log.d("set", set.toString())
-            Log.d("set Count", setCount.toString())
-            Log.d("set total", totalCount.toString())
+//            Log.d("set", set.toString())
+//            Log.d("set Count", setCount.toString())
+//            Log.d("set total", totalCount.toString())
             binding.txtAddTodoSetTotalCount.text = totalCount.toString() + "회"
         }
     }
@@ -124,7 +124,7 @@ class AddTodoActivity : AppCompatActivity() {
 
 
         val intent = Intent(this@AddTodoActivity, MainActivity::class.java)
-        intent.putExtra("todoData", gson.toJson(todo))
+        intent.putExtra("todoData", todo)
         setResult(RESULT_OK, intent)
         finish()
     }

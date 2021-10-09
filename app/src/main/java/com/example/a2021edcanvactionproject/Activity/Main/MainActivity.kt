@@ -20,9 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     private val todoAddResultCallback = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
         if(it.resultCode == RESULT_OK){
-            val todoJson = it.data!!.getStringExtra("todoData").toString()
-            Log.d("todo get", todoJson)
-            val todo = gson.fromJson(todoJson, Todo::class.java)
+            val todo = it.data!!.getSerializableExtra("todoData") as Todo
             adapter.items.add(todo)
             adapter.notifyDataSetChanged()
             binding.title = "오늘 계획 ${todoData.size}개"
