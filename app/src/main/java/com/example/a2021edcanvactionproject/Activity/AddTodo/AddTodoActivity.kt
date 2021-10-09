@@ -3,6 +3,10 @@ package com.example.a2021edcanvactionproject.Activity.AddTodo
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextUtils
+import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -10,6 +14,7 @@ import com.example.a2021edcanvactionproject.Activity.Main.MainActivity
 import com.example.a2021edcanvactionproject.R
 import com.example.a2021edcanvactionproject.databinding.ActivityAddTodoBinding
 import com.example.a2021edcanvactionproject.model.*
+import java.util.*
 
 //import com.example.a2021edcanvactionproject.model.addTodoData
 
@@ -22,6 +27,9 @@ class AddTodoActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_add_todo)
 
         ActivityInputEvent()
+
+        binding.edtAddTodoSet.addTextChangedListener(setChange)
+        binding.edtAddTodoSetCount.addTextChangedListener(setChange)
     }
 
     private fun ActivityInputEvent() = with(binding){
@@ -32,14 +40,44 @@ class AddTodoActivity : AppCompatActivity() {
 
         btnAddTodoSetTime.setOnClickListener {
             linearAddTodoInputTime.visibility = View.VISIBLE
-            edtAddTodoSet.visibility = View.INVISIBLE
+            linearAddTodoInputSet.visibility = View.INVISIBLE
+            txtAddTodoSetTotalCount.visibility = View.INVISIBLE
             choiceSetTime = true
         }
 
         btnAddTodoSetSet.setOnClickListener {
             linearAddTodoInputTime.visibility = View.INVISIBLE
-            edtAddTodoSet.visibility = View.VISIBLE
+            linearAddTodoInputSet.visibility = View.VISIBLE
+            txtAddTodoSetTotalCount.visibility = View.VISIBLE
             choiceSetTime = false
+        }
+    }
+
+    val setChange = object : TextWatcher{
+        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+        }
+
+        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+        }
+
+        override fun afterTextChanged(p0: Editable?) {
+//            Log.d("set", "변경됨")
+
+            var set = binding.edtAddTodoSet.text.toString()
+            var setCount = binding.edtAddTodoSetCount.text.toString()
+
+
+            set = if(TextUtils.isEmpty(set)) "0" else set
+            setCount  = if(TextUtils.isEmpty(setCount)) "0" else setCount
+
+            val totalCount = set.toInt() * setCount.toInt()
+
+            Log.d("set", set.toString())
+            Log.d("set Count", setCount.toString())
+            Log.d("set total", totalCount.toString())
+            binding.txtAddTodoSetTotalCount.text = totalCount.toString() + "회"
         }
     }
 

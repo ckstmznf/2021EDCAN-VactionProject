@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
 
 
         ActivityClickEvent()
-
         binding.title = "오늘 계획 ${todoData.size}개"
 
 
