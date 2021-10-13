@@ -133,7 +133,7 @@ class AddTodoActivity : AppCompatActivity() {
             todo.setCount = setCount.toInt()
         }
 
-        addTodoData(todoData = todo)
+//        addTodoData(todoData = todo)
 
 
         val intent = Intent(this@AddTodoActivity, MainActivity::class.java)

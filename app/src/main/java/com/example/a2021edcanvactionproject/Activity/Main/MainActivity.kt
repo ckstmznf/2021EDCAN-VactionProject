@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private val todoAddResultCallback = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
         if(it.resultCode == RESULT_OK){
             val todo = it.data!!.getSerializableExtra("todoData") as Todo
+            addTodoData(todoData = todo)
             adapter.items.add(todo)
             adapter.notifyDataSetChanged()
             binding.title = "오늘 계획 ${todoData.size}개"

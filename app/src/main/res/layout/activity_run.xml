@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:src="@drawable/bg5"
+            android:scaleType="fitXY"
+            android:tint="#63000000"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:src="@drawable/bg_filter"
+            android:scaleType="fitXY"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_run_line1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="43dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_run_line2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="43dp" />
+
+
+        <TextView
+            android:id="@+id/txt_run_kind"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:background="@color/main_button"
+
+
+            android:text="TextView"
+            android:textSize="18sp"
+            android:textStyle="bold"
+
+            android:gravity="center"
+            android:paddingVertical="10dp"
+            android:layout_marginTop="37dp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guide_run_line1"
+            app:layout_constraintEnd_toEndOf="@id/guide_run_line2"
+            />
+
+        <ImageView
+            android:id="@+id/img_run_sportsMan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintTop_toBottomOf="@+id/txt_run_kind"
+            app:layout_constraintBottom_toTopOf="@id/txt_run_runTime"
+            app:layout_constraintStart_toStartOf="@id/guide_run_line1"
+            app:layout_constraintEnd_toEndOf="@id/guide_run_line2"
+
+            android:src="@drawable/ic_sports_mode"
+            />
+
+        <TextView
+            android:id="@+id/txt_run_runTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textSize="20sp"
+            android:text="1/10"
+            android:textColor="@color/white"
+
+            android:layout_marginBottom="16dp"
+
+            app:layout_constraintBottom_toTopOf="@+id/progress_run"
+            app:layout_constraintStart_toStartOf="@id/guide_run_line1"
+            app:layout_constraintEnd_toEndOf="@id/guide_run_line2"
+            />
+
+        <ProgressBar
+            android:id="@+id/progress_run"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleHorizontal"
+
+            android:progressBackgroundTint="@color/white"
+            android:indeterminateTint="@color/black"
+
+            android:max="10"
+
+            android:layout_marginBottom="79dp"
+
+            app:layout_constraintBottom_toTopOf="@+id/btn_run_setCompletion"
+            app:layout_constraintStart_toStartOf="@id/guide_run_line1"
+            app:layout_constraintEnd_toEndOf="@id/guide_run_line2"
+            />
+
+        <Button
+            android:id="@+id/btn_run_setCompletion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:text="세트 완료"
+            android:textStyle="bold"
+            android:textSize="18sp"
+
+            android:layout_marginBottom="115dp"
+            android:background="@color/main_button"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guide_run_line1"
+            app:layout_constraintEnd_toEndOf="@id/guide_run_line2"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

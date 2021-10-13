@@ -16,13 +16,6 @@
         tools:context=".Activity.TodoDetail.TodoDetailActivity">
 
         <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/TodoBackground"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp" />
-        <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
 
@@ -70,12 +63,13 @@
 
 
         <TextView
-            android:id="@+id/txt_todoData_kind"
+            android:id="@+id/txt_todoDetail_kind"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
             android:text="@{kind, default=플렝크}"
-            android:textSize="18dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
 
             android:gravity="center"
             android:background="@color/main_button"
@@ -93,8 +87,10 @@
             android:layout_height="wrap_content"
 
 
+            android:layout_marginTop="42dp"
 
-            app:layout_constraintTop_toBottomOf="@id/txt_todoData_kind"
+
+            app:layout_constraintTop_toBottomOf="@id/txt_todoDetail_kind"
             app:layout_constraintStart_toStartOf="@id/guide_todoData_line1"
             app:layout_constraintEnd_toEndOf="@id/guide_todoData_line2"
             >
@@ -146,7 +142,9 @@
             android:layout_height="wrap_content"
             android:visibility="invisible"
 
-            app:layout_constraintTop_toBottomOf="@id/txt_todoData_kind"
+            android:layout_marginTop="42dp"
+
+            app:layout_constraintTop_toBottomOf="@id/txt_todoDetail_kind"
             app:layout_constraintStart_toStartOf="@id/guide_todoData_line1"
             app:layout_constraintEnd_toEndOf="@id/guide_todoData_line2"
             >
@@ -193,6 +191,20 @@
                 />
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btn_todoDetail_todoStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
 
+            android:text="지금 운동하기"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@color/main_button"
+
+            android:layout_marginBottom="83dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guide_todoData_line1"
+            app:layout_constraintEnd_toEndOf="@id/guide_todoData_line2"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

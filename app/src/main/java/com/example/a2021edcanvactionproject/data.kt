@@ -3,6 +3,7 @@ package com.example.a2021edcanvactionproject.model
 import android.app.Activity
 import android.content.SharedPreferences
 import android.util.Log
+import com.example.a2021edcanvactionproject.DB.TodoDatabase
 import com.google.gson.GsonBuilder
 import org.json.JSONArray
 import org.json.JSONObject
@@ -11,6 +12,7 @@ import java.time.LocalTime
 import kotlin.random.Random
 
 
+lateinit var todoDB : TodoDatabase
 
 
 lateinit var pref : SharedPreferences

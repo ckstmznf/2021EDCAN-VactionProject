@@ -8,7 +8,7 @@ import com.example.a2021edcanvactionproject.R
 import com.example.a2021edcanvactionproject.databinding.ActivityTodoDetailBinding
 import com.example.a2021edcanvactionproject.model.Todo
 
-class  TodoDetailActivity : AppCompatActivity() {
+class TodoDetailActivity : AppCompatActivity() {
     lateinit var binding : ActivityTodoDetailBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
