@@ -86,7 +86,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-
             android:layout_marginTop="42dp"
 
 
@@ -110,18 +109,6 @@
                 />
 
             <TextView
-                android:id="@+id/txt_todoDetail_setCount"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="0회"
-
-                android:textColor="@color/white"
-                android:textSize="24sp" />
-
-            <TextView
                 android:id="@+id/txt_todoDetail_timeS"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -140,6 +127,7 @@
             android:id="@+id/linear_todoDetail_set"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+
             android:visibility="invisible"
 
             android:layout_marginTop="42dp"
@@ -160,14 +148,27 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 />
+
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-
                 android:src="@drawable/ic_cross_sign"
                 android:tint="@color/white"
-                android:layout_weight="1"
+
+                android:layout_weight="0.5"
                 />
+
+            <TextView
+                android:id="@+id/txt_todoDetail_setCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0회"
+
+                android:textColor="@color/white"
+                android:textSize="24sp" />
 
             <ImageView
                 android:layout_width="0dp"

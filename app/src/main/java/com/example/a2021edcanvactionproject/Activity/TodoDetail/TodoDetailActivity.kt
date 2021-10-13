@@ -1,9 +1,12 @@
 package com.example.a2021edcanvactionproject.Activity.TodoDetail
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
+import com.example.a2021edcanvactionproject.Activity.Run.RunActivity
 import com.example.a2021edcanvactionproject.R
 import com.example.a2021edcanvactionproject.databinding.ActivityTodoDetailBinding
 import com.example.a2021edcanvactionproject.model.Todo
@@ -23,12 +26,22 @@ class TodoDetailActivity : AppCompatActivity() {
                 txtTodoDetailTimeM.text = "${todo.time.mine.toString()}분"
                 txtTodoDetailTimeS.text = "${todo.time.second.toString()}초"
             }   else{
+                //세트로 설정했을때
                 linearTodoDetailSet.visibility = View.VISIBLE
                 linearTodoDetailTime.visibility = View.INVISIBLE
 
-                txtTodoDetailSet.text = "${todo.set.toString()}세트"
-                txtTodoDetailSetCount.text = "${todo.setCount.toString()}회"
-                txtTodoDetailSetTotalCount.text = "${todo.setTotalCount.toString()}회"
+                txtTodoDetailSet.text = "${todo.set}세트"
+                Log.d("todoCount", "${todo.set}세트")
+                txtTodoDetailSetCount.text = "${todo.setCount}회"
+                Log.d("todoCount", "${todo.setCount}회")
+                txtTodoDetailSetTotalCount.text = "${todo.setTotalCount}회"
+                Log.d("todoCount", "${todo.setTotalCount}회")
+            }
+
+            btnTodoDetailTodoStart.setOnClickListener {
+                val intent = Intent(this@TodoDetailActivity, RunActivity::class.java)
+                intent.putExtra("todoData", todo)
+                startActivity(intent)
             }
         }
 

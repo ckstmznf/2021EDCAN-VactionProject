@@ -12,7 +12,6 @@
         android:layout_height="match_parent">
 
 
-
         <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -24,8 +23,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
+            app:layout_constraintEnd_toEndOf="parent" />
+
         <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -36,8 +35,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guide_run_line1"
@@ -46,6 +44,7 @@
 
             android:orientation="vertical"
             app:layout_constraintGuide_begin="43dp" />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guide_run_line2"
             android:layout_width="wrap_content"
@@ -73,8 +72,7 @@
 
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/guide_run_line1"
-            app:layout_constraintEnd_toEndOf="@id/guide_run_line2"
-            />
+            app:layout_constraintEnd_toEndOf="@id/guide_run_line2" />
 
         <ImageView
             android:id="@+id/img_run_sportsMan"
@@ -88,8 +86,7 @@
             app:layout_constraintStart_toStartOf="@id/guide_run_line1"
             app:layout_constraintEnd_toEndOf="@id/guide_run_line2"
 
-            android:src="@drawable/ic_sports_mode"
-            />
+            android:src="@drawable/ic_sports_mode" />
 
         <TextView
             android:id="@+id/txt_run_runTime"
@@ -104,8 +101,7 @@
 
             app:layout_constraintBottom_toTopOf="@+id/progress_run"
             app:layout_constraintStart_toStartOf="@id/guide_run_line1"
-            app:layout_constraintEnd_toEndOf="@id/guide_run_line2"
-            />
+            app:layout_constraintEnd_toEndOf="@id/guide_run_line2" />
 
         <ProgressBar
             android:id="@+id/progress_run"
@@ -122,8 +118,7 @@
 
             app:layout_constraintBottom_toTopOf="@+id/btn_run_setCompletion"
             app:layout_constraintStart_toStartOf="@id/guide_run_line1"
-            app:layout_constraintEnd_toEndOf="@id/guide_run_line2"
-            />
+            app:layout_constraintEnd_toEndOf="@id/guide_run_line2" />
 
         <Button
             android:id="@+id/btn_run_setCompletion"
@@ -139,7 +134,6 @@
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/guide_run_line1"
-            app:layout_constraintEnd_toEndOf="@id/guide_run_line2"
-            />
+            app:layout_constraintEnd_toEndOf="@id/guide_run_line2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
