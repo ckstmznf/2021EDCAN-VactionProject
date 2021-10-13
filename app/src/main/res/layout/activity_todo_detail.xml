@@ -9,11 +9,19 @@
             type="String" />
     </data>
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Activity.TodoDetail.TodoDetailActivity">
 
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/TodoBackground"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
         <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -104,6 +112,19 @@
 
                 android:layout_weight="1"
                 />
+
+            <TextView
+                android:id="@+id/txt_todoDetail_setCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0회"
+
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
             <TextView
                 android:id="@+id/txt_todoDetail_timeS"
                 android:layout_width="0dp"
@@ -149,18 +170,7 @@
                 android:tint="@color/white"
                 android:layout_weight="1"
                 />
-            <TextView
-                android:id="@+id/txt_todoDetail_setCount"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
 
-                android:text="0회"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-
-                android:layout_weight="1"
-                android:gravity="center"
-                />
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -182,5 +192,7 @@
                 android:gravity="center"
                 />
         </LinearLayout>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
