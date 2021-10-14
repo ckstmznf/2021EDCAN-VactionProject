@@ -89,23 +89,11 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
             app:layout_constraintTop_toBottomOf="@+id/txt_main_title"
-            app:layout_constraintBottom_toTopOf="@id/btn_main_reset"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/guide_main_line1"
             app:layout_constraintEnd_toEndOf="@id/guide_main_line2"
             />
 
-
-        <Button
-            android:id="@+id/btn_main_reset"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-
-            android:text="초기화"
-
-            app:layout_constraintBottom_toTopOf="@id/btn_main_addTodo"
-            app:layout_constraintStart_toStartOf="@id/guide_main_line1"
-            app:layout_constraintEnd_toStartOf="@id/btn_main_log"
-            />
         <Button
             android:id="@+id/btn_main_log"
             android:layout_width="0dp"
@@ -113,22 +101,9 @@
 
             android:text="로그"
 
-            app:layout_constraintBottom_toTopOf="@id/btn_main_addTodo"
-            app:layout_constraintStart_toEndOf="@id/btn_main_reset"
-            app:layout_constraintEnd_toEndOf="@id/guide_main_line2"
-            />
-
-        <Button
-            android:id="@+id/btn_main_addTodo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-
-            android:text="추가"
-
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/guide_main_line1"
             app:layout_constraintEnd_toEndOf="@id/guide_main_line2"
             />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

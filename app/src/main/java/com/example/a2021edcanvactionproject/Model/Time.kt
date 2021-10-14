@@ -1,4 +1,4 @@
-package com.example.a2021edcanvactionproject.model
+package com.example.a2021edcanvactionproject.Model
 
 import java.io.Serializable
 

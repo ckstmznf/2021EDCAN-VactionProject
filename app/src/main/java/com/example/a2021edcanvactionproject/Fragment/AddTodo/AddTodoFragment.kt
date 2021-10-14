@@ -1,6 +1,5 @@
 package com.example.a2021edcanvactionproject.Fragment.AddTodo
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
@@ -10,13 +9,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.example.a2021edcanvactionproject.R
 import com.example.a2021edcanvactionproject.databinding.FragmentAddTodoBinding
-import com.example.a2021edcanvactionproject.model.Time
-import com.example.a2021edcanvactionproject.model.Todo
-import com.example.a2021edcanvactionproject.model.addTodoData
+import com.example.a2021edcanvactionproject.Model.Time
+import com.example.a2021edcanvactionproject.Model.Todo
+import com.example.a2021edcanvactionproject.Model.addTodoData
 
 class AddTodoFragment : Fragment() {
     lateinit var binding : FragmentAddTodoBinding
@@ -76,13 +76,13 @@ class AddTodoFragment : Fragment() {
     }
 
     private fun saveTodoData() {
-        var kind : String
-        var set : String
-        var setCount : String
-        var timeM : String
-        var timeS : String
+        var kind: String
+        var set: String
+        var setCount: String
+        var timeM: String
+        var timeS: String
 
-        with(binding){
+        with(binding) {
             kind = spinAddTodoChoice.selectedItem.toString();
             set = edtAddTodoSet.text.toString()// as Int
             setCount = edtAddTodoSetCount.text.toString()
@@ -90,23 +90,23 @@ class AddTodoFragment : Fragment() {
             timeS = edtAddTodoTimeS.text.toString()
 
 
-            if(kind == "운동 종류"){
+            if (kind == "운동 종류") {
                 Toast.makeText(requireContext(), "운동 종류를 선택해주세요.", Toast.LENGTH_LONG).show()
                 return
             }
-            if(!choiceSetTime && set.isEmpty()){
+            if (!choiceSetTime && set.isEmpty()) {
                 edtAddTodoSet.error = "세트를 입력하세요."
                 return
             }
-            if (!choiceSetTime && setCount.isEmpty()){
+            if (!choiceSetTime && setCount.isEmpty()) {
                 edtAddTodoSetCount.error = "한세트당 할 개수를 입력하세요."
                 return
             }
-            if(choiceSetTime && timeM == ""){
+            if (choiceSetTime && timeM == "") {
                 edtAddTodoTimeM.error = "운동할 시간을 입력하세요."
                 return
             }
-            if(choiceSetTime && timeS == ""){
+            if (choiceSetTime && timeS == "") {
                 edtAddTodoTimeS.error = "운동할 시간을 입력하세요."
                 return
             }
@@ -116,9 +116,9 @@ class AddTodoFragment : Fragment() {
             st = choiceSetTime
         )
 
-        if(choiceSetTime){
+        if (choiceSetTime) {
             todo.time = Time(timeM.toInt(), timeS.toInt())
-        }   else{
+        } else {
             todo.set = set.toInt()
             todo.setCount = setCount.toInt()
         }

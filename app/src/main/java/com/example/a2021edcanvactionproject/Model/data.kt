@@ -1,14 +1,10 @@
-package com.example.a2021edcanvactionproject.model
+package com.example.a2021edcanvactionproject.Model
 
-import android.app.Activity
 import android.content.SharedPreferences
-import android.util.Log
 import com.google.gson.GsonBuilder
 import org.json.JSONArray
 import org.json.JSONObject
 import java.time.LocalDate
-import java.time.LocalTime
-import kotlin.random.Random
 
 
 //lateinit var todoDB : TodoDatabase
@@ -54,7 +50,7 @@ fun addDay(date : LocalDate = LocalDate.now()) {
 }
 
 fun getDataDay(date : LocalDate = LocalDate.now()): MutableList<Todo> {
-    addDay()
+    addDay(date)
     var data = getData()
         .getJSONObject(date.year.toString())
         .getJSONObject(date.monthValue.toString())

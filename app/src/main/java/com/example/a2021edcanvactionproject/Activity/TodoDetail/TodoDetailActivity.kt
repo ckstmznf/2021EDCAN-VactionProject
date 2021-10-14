@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.a2021edcanvactionproject.Activity.Run.RunActivity
 import com.example.a2021edcanvactionproject.R
 import com.example.a2021edcanvactionproject.databinding.ActivityTodoDetailBinding
-import com.example.a2021edcanvactionproject.model.Todo
+import com.example.a2021edcanvactionproject.Model.Todo
 
 class TodoDetailActivity : AppCompatActivity() {
     lateinit var binding : ActivityTodoDetailBinding

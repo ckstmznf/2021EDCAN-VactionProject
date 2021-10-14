@@ -1,9 +1,7 @@
-package com.example.a2021edcanvactionproject.model
+package com.example.a2021edcanvactionproject.Model
 
-import android.text.Html
 import java.io.Serializable
 import java.time.LocalTime
-import kotlin.reflect.KProperty
 
 
 data class Todo(

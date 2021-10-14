@@ -7,8 +7,8 @@ import android.content.Intent
 import android.os.Handler
 import com.example.a2021edcanvactionproject.Activity.Main.MainActivity
 import com.example.a2021edcanvactionproject.R
-import com.example.a2021edcanvactionproject.model.editor
-import com.example.a2021edcanvactionproject.model.pref
+import com.example.a2021edcanvactionproject.Model.editor
+import com.example.a2021edcanvactionproject.Model.pref
 
 
 class SplashActivity : AppCompatActivity() {

@@ -1,6 +1,5 @@
 package com.example.a2021edcanvactionproject.Fragment.Main
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -12,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.a2021edcanvactionproject.R
 import com.example.a2021edcanvactionproject.databinding.FragmentMainBinding
-import com.example.a2021edcanvactionproject.model.*
+import com.example.a2021edcanvactionproject.Model.*
 
 class MainFragment : Fragment() {
     lateinit var binding : FragmentMainBinding
@@ -36,10 +35,9 @@ class MainFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false)
         val root = binding.root
 
+        ActivityClickEvent()
+
         binding.title = "오늘 계획 ${todoData.size}개"
-
-
-
         binding.recycleMainTodoList.adapter = adapter
         binding.recycleMainTodoList.addItemDecoration(TodoListDecoration(100))
 
@@ -49,15 +47,14 @@ class MainFragment : Fragment() {
 
     private fun ActivityClickEvent(){
         with(binding){
-            btnMainReset.setOnClickListener {
-                editor.clear()
-                editor.apply()
-            }
-
+//            btnMainReset.setOnClickListener {
+//                editor.clear()
+//                editor.apply()
+//            }
+//
             btnMainLog.setOnClickListener {
                 Log.d("todoLog", getData().toString())
-                Log.d("todoLog todoData", todoData.toString())
-                Log.d("todoLog adapter", adapter.items.toString())
+                Log.d("todoLog todoData", getDataDay().toString())
             }
         }
 
