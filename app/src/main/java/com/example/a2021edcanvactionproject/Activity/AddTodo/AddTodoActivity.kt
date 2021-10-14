@@ -6,11 +6,10 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import com.example.a2021edcanvactionproject.Activity.Main.MainActivity
+import com.example.a2021edcanvactionproject.Activity.Main.Main2Activity
 import com.example.a2021edcanvactionproject.R
 import com.example.a2021edcanvactionproject.databinding.ActivityAddTodoBinding
 import com.example.a2021edcanvactionproject.model.*
@@ -136,7 +135,7 @@ class AddTodoActivity : AppCompatActivity() {
 //        addTodoData(todoData = todo)
 
 
-        val intent = Intent(this@AddTodoActivity, MainActivity::class.java)
+        val intent = Intent(this@AddTodoActivity, Main2Activity::class.java)
         intent.putExtra("todoData", todo)
         setResult(RESULT_OK, intent)
         finish()

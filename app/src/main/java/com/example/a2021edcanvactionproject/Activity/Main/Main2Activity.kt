@@ -8,12 +8,14 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
 import com.example.a2021edcanvactionproject.Activity.AddTodo.AddTodoActivity
 import com.example.a2021edcanvactionproject.R
+import com.example.a2021edcanvactionproject.databinding.ActivityMain2Binding
+import com.example.a2021edcanvactionproject.databinding.ActivityMain2BindingImpl
 import com.example.a2021edcanvactionproject.databinding.ActivityMainBinding
 import com.example.a2021edcanvactionproject.model.*
 
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMainBinding
+class Main2Activity : AppCompatActivity() {
+    private lateinit var binding : ActivityMain2Binding
 
     private val todoData = getDataDay()
     private val adapter = TodoListAdapter(todoData)
@@ -30,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main2)
 
 
         ActivityClickEvent()
@@ -45,7 +47,7 @@ class MainActivity : AppCompatActivity() {
     private fun ActivityClickEvent(){
         with(binding){
             btnMainAddTodo.setOnClickListener {
-                val intent = Intent(this@MainActivity, AddTodoActivity::class.java)
+                val intent = Intent(this@Main2Activity, AddTodoActivity::class.java)
                 todoAddResultCallback.launch(intent)
             }
 
@@ -53,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                 editor.clear()
                 editor.apply()
 
-                val intent = Intent(this@MainActivity, MainActivity::class.java)
+                val intent = Intent(this@Main2Activity, Main2Activity::class.java)
                 startActivity(intent)
                 finish()
             }
