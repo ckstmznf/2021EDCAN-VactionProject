@@ -1,4 +1,4 @@
-package com.example.a2021edcanvactionproject.Activity.Main
+package com.example.a2021edcanvactionproject.Fragment.Main
 
 import android.graphics.Rect
 import android.view.View

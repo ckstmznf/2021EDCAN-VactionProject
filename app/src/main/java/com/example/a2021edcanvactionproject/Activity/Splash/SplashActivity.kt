@@ -5,8 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.os.Handler
-import com.example.a2021edcanvactionproject.Activity.Main.Main2Activity
-import com.example.a2021edcanvactionproject.Activity.MainActivity
+import com.example.a2021edcanvactionproject.Activity.Main.MainActivity
 import com.example.a2021edcanvactionproject.R
 import com.example.a2021edcanvactionproject.model.editor
 import com.example.a2021edcanvactionproject.model.pref

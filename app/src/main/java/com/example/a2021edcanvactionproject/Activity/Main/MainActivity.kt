@@ -1,4 +1,4 @@
-package com.example.a2021edcanvactionproject.Activity
+package com.example.a2021edcanvactionproject.Activity.Main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

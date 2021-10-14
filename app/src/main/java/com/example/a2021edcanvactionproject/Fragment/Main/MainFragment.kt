@@ -10,10 +10,6 @@ import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.example.a2021edcanvactionproject.Activity.AddTodo.AddTodoActivity
-import com.example.a2021edcanvactionproject.Activity.Main.Main2Activity
-import com.example.a2021edcanvactionproject.Activity.Main.TodoListAdapter
-import com.example.a2021edcanvactionproject.Activity.Main.TodoListDecoration
 import com.example.a2021edcanvactionproject.R
 import com.example.a2021edcanvactionproject.databinding.FragmentMainBinding
 import com.example.a2021edcanvactionproject.model.*
@@ -53,17 +49,9 @@ class MainFragment : Fragment() {
 
     private fun ActivityClickEvent(){
         with(binding){
-            btnMainAddTodo.setOnClickListener {
-                val intent = Intent(requireContext(), AddTodoActivity::class.java)
-                todoAddResultCallback.launch(intent)
-            }
-
             btnMainReset.setOnClickListener {
                 editor.clear()
                 editor.apply()
-
-                val intent = Intent(requireContext(), Main2Activity::class.java)
-                startActivity(intent)
             }
 
             btnMainLog.setOnClickListener {
