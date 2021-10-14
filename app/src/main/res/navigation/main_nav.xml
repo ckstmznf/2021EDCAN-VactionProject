@@ -11,13 +11,20 @@
         android:label="fragment_main2"
         tools:layout="@layout/fragment_main" />
     <fragment
+        android:id="@+id/addTodoFragment"
+        android:name="com.example.a2021edcanvactionproject.Fragment.AddTodo.AddTodoFragment"
+        android:label="fragment_add_todo"
+        tools:layout="@layout/fragment_add_todo" />
+    <fragment
         android:id="@+id/calendarFragment"
         android:name="com.example.a2021edcanvactionproject.Fragment.Calendar.CalendarFragment"
         android:label="fragment_calendar2"
         tools:layout="@layout/fragment_calendar" />
+    <!--
     <fragment
         android:id="@+id/moreFragment"
         android:name="com.example.a2021edcanvactionproject.Fragment.More.MoreFragment"
         android:label="fragment_more2"
         tools:layout="@layout/fragment_more" />
+        -->
 </navigation>

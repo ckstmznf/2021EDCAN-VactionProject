@@ -6,13 +6,13 @@
         android:icon="@drawable/ic_home"
         />
     <item
+        android:id="@+id/addTodoFragment"
+        android:title="Add Todo"
+        android:icon="@drawable/ic_add_box"
+        />
+    <item
         android:id="@+id/calendarFragment"
         android:title="Calendar"
         android:icon="@drawable/ic_baseline_calenda"
-        />
-    <item
-        android:id="@+id/moreFragment"
-        android:title="More"
-        android:icon="@drawable/ic_more"
         />
 </menu>
