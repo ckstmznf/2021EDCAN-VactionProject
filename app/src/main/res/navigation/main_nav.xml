@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.a2021edcanvactionproject.MainFragment"
+        android:name="com.example.a2021edcanvactionproject.Fragment.Main.MainFragment"
         android:label="fragment_main2"
         tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/calendarFragment"
-        android:name="com.example.a2021edcanvactionproject.CalendarFragment"
+        android:name="com.example.a2021edcanvactionproject.Fragment.Calendar.CalendarFragment"
         android:label="fragment_calendar2"
         tools:layout="@layout/fragment_calendar" />
     <fragment
         android:id="@+id/moreFragment"
-        android:name="com.example.a2021edcanvactionproject.MoreFragment"
+        android:name="com.example.a2021edcanvactionproject.Fragment.More.MoreFragment"
         android:label="fragment_more2"
         tools:layout="@layout/fragment_more" />
 </navigation>
