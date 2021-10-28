@@ -10,7 +10,7 @@ import com.example.a2021edcanvactionproject.Activity.TodoDetail.TodoDetailActivi
 import com.example.a2021edcanvactionproject.R
 import com.example.a2021edcanvactionproject.Model.Todo
 
-class TodoListAdapter(val items: MutableList<Todo>) : RecyclerView.Adapter<TodoListAdapter.TodoListViewHolder>() {
+class TodoListAdapter(val items: MutableList<Todo>, val toDay : Boolean) : RecyclerView.Adapter<TodoListAdapter.TodoListViewHolder>() {
     class TodoListViewHolder(val view : View) : RecyclerView.ViewHolder(view) {
         val title = view.findViewById<TextView>(R.id.txt_todoListItem_kind)
     }
@@ -23,6 +23,7 @@ class TodoListAdapter(val items: MutableList<Todo>) : RecyclerView.Adapter<TodoL
         holder.view.setOnClickListener {
             val intent = Intent(parent.context, TodoDetailActivity::class.java)
             intent.putExtra("todoData", items[holder.adapterPosition])
+            intent.putExtra("toDay", toDay)
 
             parent.context.startActivity(intent)
         }

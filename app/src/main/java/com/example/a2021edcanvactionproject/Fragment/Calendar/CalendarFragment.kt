@@ -44,7 +44,7 @@ class CalendarFragment : Fragment() {
             }   else{
                 recycleCalendarTodoList.visibility = View.VISIBLE
                 txtCalendarNullMSG.visibility = View.INVISIBLE
-                recycleCalendarTodoList.adapter = TodoListAdapter(todoList)
+                recycleCalendarTodoList.adapter = TodoListAdapter(todoList, LocalDate.now().isEqual(date))
             }
         }
     }

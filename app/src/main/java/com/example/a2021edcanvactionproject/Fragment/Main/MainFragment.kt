@@ -16,7 +16,7 @@ import com.example.a2021edcanvactionproject.Model.*
 class MainFragment : Fragment() {
     lateinit var binding : FragmentMainBinding
     private val todoData = getDataDay()
-    private val adapter = TodoListAdapter(todoData)
+    private val adapter = TodoListAdapter(todoData, true)
 
     private val todoAddResultCallback = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
         if(it.resultCode == AppCompatActivity.RESULT_OK){
@@ -47,17 +47,10 @@ class MainFragment : Fragment() {
 
     private fun ActivityClickEvent(){
         with(binding){
-//            btnMainReset.setOnClickListener {
-//                editor.clear()
-//                editor.apply()
-//            }
-//
             btnMainLog.setOnClickListener {
                 Log.d("todoLog", getData().toString())
                 Log.d("todoLog todoData", getDataDay().toString())
             }
         }
-
-
     }
 }

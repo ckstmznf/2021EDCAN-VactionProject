@@ -1,5 +1,6 @@
 package com.example.a2021edcanvactionproject.Activity.TodoDetail
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,11 +14,14 @@ import com.example.a2021edcanvactionproject.Model.Todo
 
 class TodoDetailActivity : AppCompatActivity() {
     lateinit var binding : ActivityTodoDetailBinding
+
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_todo_detail)
 
         val todo = intent.getSerializableExtra("todoData") as Todo
+        val toDay = intent.getBooleanExtra("toDay", true)
 
         with(binding){
             kind = todo.kind
@@ -31,17 +35,19 @@ class TodoDetailActivity : AppCompatActivity() {
                 linearTodoDetailTime.visibility = View.INVISIBLE
 
                 txtTodoDetailSet.text = "${todo.set}세트"
-                Log.d("todoCount", "${todo.set}세트")
                 txtTodoDetailSetCount.text = "${todo.setCount}회"
-                Log.d("todoCount", "${todo.setCount}회")
                 txtTodoDetailSetTotalCount.text = "${todo.setTotalCount}회"
-                Log.d("todoCount", "${todo.setTotalCount}회")
             }
 
-            btnTodoDetailTodoStart.setOnClickListener {
-                val intent = Intent(this@TodoDetailActivity, RunActivity::class.java)
-                intent.putExtra("todoData", todo)
-                startActivity(intent)
+            if(toDay){
+                btnTodoDetailTodoStart.visibility = View.VISIBLE
+                btnTodoDetailTodoStart.setOnClickListener {
+                    val intent = Intent(this@TodoDetailActivity, RunActivity::class.java)
+                    intent.putExtra("todoData", todo)
+                    startActivity(intent)
+                }
+            }   else{
+                btnTodoDetailTodoStart.visibility = View.INVISIBLE
             }
         }
 

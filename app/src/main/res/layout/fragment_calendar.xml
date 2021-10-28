@@ -60,7 +60,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:background="@color/main_button"
+            android:background="@drawable/calendar_background"
 
             android:layout_marginTop="49dp"
 
