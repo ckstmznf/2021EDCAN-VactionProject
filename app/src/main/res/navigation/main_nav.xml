@@ -14,7 +14,11 @@
         android:id="@+id/addTodoFragment"
         android:name="com.example.a2021edcanvactionproject.Fragment.AddTodo.AddTodoFragment"
         android:label="fragment_add_todo"
-        tools:layout="@layout/fragment_add_todo" />
+        tools:layout="@layout/fragment_add_todo" >
+        <action
+            android:id="@+id/action_addTodoFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/calendarFragment"
         android:name="com.example.a2021edcanvactionproject.Fragment.Calendar.CalendarFragment"
