@@ -27,8 +27,8 @@ class TodoDetailActivity : AppCompatActivity() {
             kind = todo.kind
             if(todo.st){
                 //시간으로 설정했을때
-                txtTodoDetailTimeM.text = "${todo.time.mine.toString()}분"
-                txtTodoDetailTimeS.text = "${todo.time.second.toString()}초"
+                txtTodoDetailTimeM.text = "${todo.time.mine}분"
+                txtTodoDetailTimeS.text = "${todo.time.second}초"
             }   else{
                 //세트로 설정했을때
                 linearTodoDetailSet.visibility = View.VISIBLE
@@ -50,6 +50,5 @@ class TodoDetailActivity : AppCompatActivity() {
                 btnTodoDetailTodoStart.visibility = View.INVISIBLE
             }
         }
-
     }
 }
