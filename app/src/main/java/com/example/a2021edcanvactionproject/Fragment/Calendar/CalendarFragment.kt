@@ -1,15 +1,14 @@
 package com.example.a2021edcanvactionproject.Fragment.Calendar
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import com.example.a2021edcanvactionproject.Activity.Splash.DB
 import com.example.a2021edcanvactionproject.Fragment.Main.TodoListAdapter
 import com.example.a2021edcanvactionproject.Fragment.Main.TodoListDecoration
-import com.example.a2021edcanvactionproject.Model.getDataDay
 import com.example.a2021edcanvactionproject.R
 import com.example.a2021edcanvactionproject.databinding.FragmentCalendarBinding
 import java.time.LocalDate
@@ -35,7 +34,7 @@ class CalendarFragment : Fragment() {
     }
 
     fun showList(date : LocalDate){
-        val todoList = getDataDay(date)
+        val todoList = DB.getDataDay(date)
         with(binding){
             if(todoList.size == 0){
                 recycleCalendarTodoList.visibility = View.INVISIBLE

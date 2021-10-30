@@ -6,20 +6,20 @@ import android.os.Bundle
 import android.content.Intent
 import android.os.Handler
 import com.example.a2021edcanvactionproject.Activity.Main.MainActivity
+import com.example.a2021edcanvactionproject.Model.DB.Database
 import com.example.a2021edcanvactionproject.R
-import com.example.a2021edcanvactionproject.Model.editor
-import com.example.a2021edcanvactionproject.Model.pref
 
+lateinit var DB : Database
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-//        todoDB = TodoDatabase.getInstance(applicationContext)
+        DB = Database()
 
-        pref = getSharedPreferences("pref", Activity.MODE_PRIVATE)
-        editor = pref.edit()
+        DB.pref = getSharedPreferences("pref", Activity.MODE_PRIVATE)
+        DB.editor = DB.pref.edit()
 
         val handler = Handler()
         handler.postDelayed(Runnable {

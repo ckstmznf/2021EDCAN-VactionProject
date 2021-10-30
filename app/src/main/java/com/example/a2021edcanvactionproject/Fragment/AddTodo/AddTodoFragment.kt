@@ -10,15 +10,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
-import androidx.navigation.findNavController
 import com.example.a2021edcanvactionproject.Activity.Main.MainActivity
+import com.example.a2021edcanvactionproject.Activity.Splash.DB
 import com.example.a2021edcanvactionproject.R
 import com.example.a2021edcanvactionproject.databinding.FragmentAddTodoBinding
 import com.example.a2021edcanvactionproject.Model.Time
 import com.example.a2021edcanvactionproject.Model.Todo
-import com.example.a2021edcanvactionproject.Model.addTodoData
 
 class AddTodoFragment : Fragment() {
     lateinit var binding : FragmentAddTodoBinding
@@ -107,7 +104,7 @@ class AddTodoFragment : Fragment() {
             todo.setCount = setCount.toInt()
         }
 
-        addTodoData(todoData = todo)
+        DB.addTodoData(todoData = todo)
         Toast.makeText(requireContext(), "운동을 추가하였습니다.", Toast.LENGTH_LONG).show()
 
         (activity as MainActivity).navController.navigate(R.id.action_addTodoFragment_to_mainFragment)
