@@ -32,7 +32,7 @@ class RestActivity : AppCompatActivity() {
     fun initClickEvent() = with(binding){
         btnRestContinue.setOnClickListener {
             val intent = Intent(this@RestActivity, RunActivity::class.java)
-            intent.putExtra("nowCount", nowCount + 1)
+            intent.putExtra("nowCount", nowCount)
             intent.putExtra("todoData", todo)
             startActivity(intent)
             finish()
