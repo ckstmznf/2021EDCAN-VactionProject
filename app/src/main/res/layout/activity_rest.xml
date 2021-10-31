@@ -2,7 +2,12 @@
 <layout>
 
     <data>
-
+        <variable
+            name="timeM"
+            type="int" />
+        <variable
+            name="timeS"
+            type="int" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,6 +18,32 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Activity.Rest.RestActivity">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:src="@drawable/bg6"
+            android:scaleType="fitXY"
+            android:tint="#63000000"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:src="@drawable/bg_filter"
+            android:scaleType="fitXY"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guide_rest_line1"
@@ -39,6 +70,7 @@
             android:text="운동 종류"
             android:gravity="center"
             android:textSize="18sp"
+            android:background="@color/main_button"
 
             android:layout_marginTop="36dp"
             android:paddingVertical="10dp"
@@ -47,15 +79,47 @@
             app:layout_constraintStart_toStartOf="@id/guide_rest_line1"
             app:layout_constraintEnd_toEndOf="@id/guide_rest_line2"
             />
-        
-        <TextView
-            android:id="@+id/txt_rest_nowCount"
+
+        <ImageView
+            android:id="@+id/img_rest_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="현재 1개 완료"
+            android:src="@drawable/ic_rest"
 
             app:layout_constraintTop_toBottomOf="@id/txt_rest_kind"
+            app:layout_constraintBottom_toTopOf="@id/txt_rest_time"
+            app:layout_constraintStart_toStartOf="@id/guide_rest_line1"
+            app:layout_constraintEnd_toEndOf="@id/guide_rest_line2"
+            app:layout_constraintHorizontal_bias="0"
+            />
+
+        <TextView
+            android:id="@+id/txt_rest_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@{timeM + `:` + timeS, default=`01:00`}"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+
+            app:layout_constraintBottom_toTopOf="@id/progress_rest"
+            app:layout_constraintStart_toStartOf="@id/guide_rest_line1"
+            app:layout_constraintEnd_toEndOf="@id/guide_rest_line2"
+            />
+
+        <ProgressBar
+            android:id="@+id/progress_rest"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleHorizontal"
+
+            android:progressBackgroundTint="@color/white"
+            android:indeterminateTint="@color/black"
+
+            android:layout_marginBottom="79dp"
+
+            app:layout_constraintBottom_toTopOf="@id/btn_rest_continue"
             app:layout_constraintStart_toStartOf="@id/guide_rest_line1"
             app:layout_constraintEnd_toEndOf="@id/guide_rest_line2"
             />
@@ -66,7 +130,7 @@
             android:layout_height="wrap_content"
 
             android:text="휴식 건너 뛰기"
-            android:background="@drawable/button"
+            android:background="@color/main_button"
 
             android:layout_marginBottom="115dp"
 

@@ -9,4 +9,10 @@ interface DB {
     fun addDay(date : LocalDate = LocalDate.now())
     fun getDataDay(date : LocalDate = LocalDate.now()): MutableList<Todo>
     fun addTodoData(date : LocalDate = LocalDate.now(), todoData : Todo)
+    fun todoCompleat(todo : Todo)
+
+    fun getKinds() : MutableList<String>
+    fun addKind(kind : String)
+
+    fun clear()
 }

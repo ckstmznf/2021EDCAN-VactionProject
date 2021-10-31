@@ -1,9 +1,10 @@
 package com.example.a2021edcanvactionproject.Model.DB
 
-import android.app.Activity
 import android.content.SharedPreferences
+import android.util.Log
 import com.example.a2021edcanvactionproject.Model.Todo
 import com.google.gson.GsonBuilder
+import com.google.gson.JsonArray
 import org.json.JSONArray
 import org.json.JSONObject
 import java.time.LocalDate
@@ -81,5 +82,51 @@ class Database : DB{
         editor.apply()
     }
 
+    override fun todoCompleat(todo: Todo) {
+        val toDayTodo = getDataDay()
+        val resultOneDay = toDayTodo.filter{
+            it != todo
+        } as MutableList<Todo>
 
+        todo.completion = true
+        resultOneDay.add(todo)
+
+        val resultOneDay_json = resultOneDay.map{
+            gson.toJson(it)
+        }
+
+        val now = LocalDate.now()
+        val allDayTodo = getData()
+
+        allDayTodo.getJSONObject(now.year.toString())
+            .getJSONObject(now.monthValue.toString())
+            .put(now.dayOfMonth.toString(), JSONArray(resultOneDay_json))
+
+        editor.putString("data", allDayTodo.toString())
+        editor.apply()
+    }
+
+    override fun getKinds(): MutableList<String> {
+        val kinds = JSONArray(pref.getString("kinds", "[]"))
+        val result = mutableListOf<String>()
+
+        for (i in 0 until kinds.length()){
+            result.add(kinds[i].toString())
+        }
+
+        return result
+    }
+
+    override fun addKind(kind: String) {
+        val kinds = getKinds()
+        kinds.add(kind)
+
+        editor.putString("kinds", gson.toJson(kinds))
+        editor.apply()
+    }
+
+    override fun clear() {
+        editor.clear()
+        editor.apply()
+    }
 }

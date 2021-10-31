@@ -15,4 +15,9 @@
         android:title="Calendar"
         android:icon="@drawable/ic_baseline_calenda"
         />
+    <item
+        android:id="@+id/moreFragment"
+        android:title="More"
+        android:icon="@drawable/ic_more"
+        />
 </menu>

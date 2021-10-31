@@ -21,6 +21,9 @@ class SplashActivity : AppCompatActivity() {
         DB.pref = getSharedPreferences("pref", Activity.MODE_PRIVATE)
         DB.editor = DB.pref.edit()
 
+
+//        DB.clear()
+
         val handler = Handler()
         handler.postDelayed(Runnable {
             val intent = Intent(this, MainActivity::class.java) //화면 전환

@@ -21,6 +21,7 @@ class TodoDetailActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_todo_detail)
 
         val todo = intent.getSerializableExtra("todoData") as Todo
+        Log.d("todoData", todo.toString())
         val toDay = intent.getBooleanExtra("toDay", true)
 
         with(binding){

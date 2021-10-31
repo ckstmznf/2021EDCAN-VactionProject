@@ -95,6 +95,18 @@
             />
 
         <Button
+            android:id="@+id/btn_main_clear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:text="초기화"
+
+            app:layout_constraintBottom_toTopOf="@id/btn_main_log"
+            app:layout_constraintStart_toStartOf="@id/guide_main_line1"
+            app:layout_constraintEnd_toEndOf="@id/guide_main_line2"
+            />
+
+        <Button
             android:id="@+id/btn_main_log"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

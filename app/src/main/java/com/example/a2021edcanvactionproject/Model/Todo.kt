@@ -18,7 +18,7 @@ data class Todo(
     val alarm : Boolean = false,
 
     val alarmTime : LocalTime? = null,
-    val completion : Boolean = false
+    var completion : Boolean = false
 ) : Serializable{
     val setTotalCount : Int
         get() {

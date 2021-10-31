@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.fragmentContainerView)
 
         bottomNav.setupWithNavController(navController)
+
+        supportActionBar?.hide()
     }
 
 //    fun gotoMain(){
