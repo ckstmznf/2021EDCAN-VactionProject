@@ -63,7 +63,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:entries="@array/exercise"
             android:textSize="18sp"
 
             android:background="@drawable/choice_spinner_bg"

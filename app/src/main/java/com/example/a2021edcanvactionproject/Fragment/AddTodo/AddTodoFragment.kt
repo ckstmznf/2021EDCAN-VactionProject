@@ -1,5 +1,7 @@
 package com.example.a2021edcanvactionproject.Fragment.AddTodo
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
@@ -8,6 +10,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.EditText
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.a2021edcanvactionproject.Activity.Main.MainActivity
@@ -34,16 +39,50 @@ class AddTodoFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_todo, container, false)
         val root = binding.root
 
-        ActivityInputEvent()
+        initClickEvent()
 
-        binding.edtAddTodoSet.addTextChangedListener(setChange)
-        binding.edtAddTodoSetCount.addTextChangedListener(setChange)
+        val kinds = DB.getKinds()
+        kinds.add(0, "운동 선택")
+        kinds.add("운동 추가")
+
+        with(binding){
+            spinAddTodoChoice.adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, kinds)
+            spinAddTodoChoice.onItemSelectedListener = kindChanged
+            edtAddTodoSet.addTextChangedListener(setChange)
+            edtAddTodoSetCount.addTextChangedListener(setChange)
+        }
 
         return root
     }
 
 
-    private fun ActivityInputEvent() = with(binding){
+    val kindChanged = object : AdapterView.OnItemSelectedListener{
+        override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+            if(binding.spinAddTodoChoice.getItemAtPosition(p2) == "운동 추가"){
+                val dialog = View.inflate(activity, R.layout.dialog_input, null)
+                AlertDialog.Builder(activity)
+                    .setView(dialog)
+                    .setPositiveButton("추가", object : DialogInterface.OnClickListener {
+                        override fun onClick(p0: DialogInterface?, p1: Int) {
+                            val inputKind = dialog.findViewById<EditText>(R.id.editText)
+                            val kind = inputKind.text.toString()
+                            DB.addKind(kind)
+                            p0!!.dismiss()
+                        }
+                    })
+                    .setNegativeButton("취소", object : DialogInterface.OnClickListener{
+                        override fun onClick(p0: DialogInterface?, p1: Int) {
+                            p0!!.dismiss()
+                        }
+                    })
+                    .show()
+            }
+        }
+
+        override fun onNothingSelected(p0: AdapterView<*>?) {}
+    }
+
+    private fun initClickEvent() = with(binding){
         btnAddTodoAddTodo.setOnClickListener {
             saveTodoData()
         }
@@ -111,7 +150,7 @@ class AddTodoFragment : Fragment() {
     }
 
     fun addTodoInputEmptyCheck() : Boolean = with(binding){
-        if (kind == "운동 종류") {
+        if (kind == "운동 선택") {
             Toast.makeText(requireContext(), "운동 종류를 선택해주세요.", Toast.LENGTH_LONG).show()
         }
         else if (!choiceSetTime && set.isEmpty()) {
