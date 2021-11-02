@@ -24,7 +24,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
-
         <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -36,7 +35,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guide_more_line1"
             android:layout_width="wrap_content"
@@ -44,7 +42,6 @@
 
             android:orientation="vertical"
             app:layout_constraintGuide_begin="49dp" />
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guide_more_line2"
             android:layout_width="wrap_content"
@@ -53,12 +50,12 @@
             android:orientation="vertical"
             app:layout_constraintGuide_end="49dp" />
 
-        <Button
-            android:id="@+id/btn_more_add"
+        <TextView
+            android:id="@+id/txt_more_kindList"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:text="운동 추가하기"
+            android:text="추가한 운동 목록"
             android:textSize="18sp"
 
             android:gravity="center"
@@ -70,6 +67,54 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/guide_more_line1"
             app:layout_constraintEnd_toEndOf="@id/guide_more_line2" />
+        
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle_more_kondList"
+            android:layout_width="0dp"
+            android:layout_height="500dp"
+
+            android:layout_marginHorizontal="40dp"
+            tools:listitem="@layout/kind_list_item"
+
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+            app:layout_constraintTop_toBottomOf="@id/txt_more_kindList"
+            app:layout_constraintStart_toStartOf="@id/guide_more_line1"
+            app:layout_constraintEnd_toEndOf="@id/guide_more_line2"
+            />
+
+        <TextView
+            android:id="@+id/txt_more_addPls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="+ 버튼을 눌러 운동을 추가해보세요!"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+
+            android:visibility="invisible"
+
+            app:layout_constraintTop_toTopOf="@+id/recycle_more_kondList"
+            app:layout_constraintBottom_toBottomOf="@+id/recycle_more_kondList"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_more_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:backgroundTint="#2196F3"
+            app:srcCompat="@drawable/ic_add_box"
+            android:tint="@color/white"
+
+            android:layout_margin="24dp"
+            app:borderWidth="0dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

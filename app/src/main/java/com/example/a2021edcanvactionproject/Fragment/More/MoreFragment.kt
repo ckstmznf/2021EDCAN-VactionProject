@@ -15,6 +15,9 @@ import com.example.a2021edcanvactionproject.databinding.FragmentMoreBinding
 
 class MoreFragment : Fragment() {
     lateinit var binding : FragmentMoreBinding
+    val kindList = DB.getKinds()
+    val kindListAdapter = KindListAdapter(kindList)
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,6 +27,12 @@ class MoreFragment : Fragment() {
 
         initClickEvent()
 
+        if(kindList.isEmpty()){
+            binding.txtMoreAddPls.visibility = View.VISIBLE
+        }   else{
+            binding.recycleMoreKondList.adapter = kindListAdapter
+        }
+
         return root
     }
 
@@ -32,20 +41,22 @@ class MoreFragment : Fragment() {
             val dialog = View.inflate(activity, R.layout.dialog_input, null)
             AlertDialog.Builder(activity)
                 .setView(dialog)
-                .setPositiveButton("추가", object : DialogInterface.OnClickListener {
-                    override fun onClick(p0: DialogInterface?, p1: Int) {
-                        val inputKind = dialog.findViewById<EditText>(R.id.editText)
-                        val kind = inputKind.text.toString()
-                        DB.addKind(kind)
-                        p0!!.dismiss()
-                    }
-                })
-                .setNegativeButton("취소", object : DialogInterface.OnClickListener{
-                    override fun onClick(p0: DialogInterface?, p1: Int) {
-                        p0!!.dismiss()
-                    }
-                })
+                .setPositiveButton("추가") { p0, p1 ->
+                    val inputKind = dialog.findViewById<EditText>(R.id.editText)
+                    val kind = inputKind.text.toString()
+                    DB.addKind(kind)
+                    kindList.add(kind)
+                    kindListAdapter.notifyDataSetChanged()
+
+                    if (kindList.size == 1) binding.txtMoreAddPls.visibility = View.INVISIBLE
+
+                    p0!!.dismiss()
+                }
+                .setNegativeButton("취소") { p0, p1 ->
+                    p0!!.dismiss()
+                }
                 .show()
         }
     }
+
 }
