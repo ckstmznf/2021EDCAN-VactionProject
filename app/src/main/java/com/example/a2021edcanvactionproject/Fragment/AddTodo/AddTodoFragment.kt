@@ -149,7 +149,7 @@ class AddTodoFragment : Fragment() {
     }
 
     fun addTodoInputEmptyCheck() : Boolean = with(binding){
-        if (kind == "운동 선택") {
+        if (kind == "운동 선택" || kind == "운동 추가") {
             Toast.makeText(requireContext(), "운동 종류를 선택해주세요.", Toast.LENGTH_LONG).show()
         }
         else if (!choiceSetTime && set.isEmpty()) {

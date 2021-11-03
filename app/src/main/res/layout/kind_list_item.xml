@@ -14,8 +14,7 @@
 
         android:text="스쿼트"
         android:textSize="20sp"
-
-        android:layout_marginVertical="12dp"
+        android:fontFamily="@font/notosans_kr_bold"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

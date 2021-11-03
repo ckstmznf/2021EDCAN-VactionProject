@@ -32,6 +32,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
+
             android:background="@color/black"
             app:menu="@menu/bottom_menu"
             app:itemIconTint="@drawable/menu_selector_color"

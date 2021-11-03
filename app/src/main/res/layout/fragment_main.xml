@@ -73,8 +73,9 @@
             android:layout_height="wrap_content"
 
             android:text="@{title, default=`오늘 계획 10개\n1개 실천중 (10%)`}"
-            android:textColor="@color/white"
             android:textSize="18dp"
+            android:fontFamily="@font/notosans_kr_bold"
+            android:textColor="@color/white"
 
             app:layout_constraintTop_toTopOf="@id/guide_main_line3"
             app:layout_constraintStart_toStartOf="@id/guide_main_line1"

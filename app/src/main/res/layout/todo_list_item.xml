@@ -72,6 +72,7 @@
 
             android:text="@{kind, default=스쿼트}"
             android:textSize="18dp"
+            android:fontFamily="@font/notosans_kr_bold"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"

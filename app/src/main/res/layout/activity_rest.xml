@@ -68,12 +68,13 @@
             android:layout_height="wrap_content"
 
             android:text="운동 종류"
-            android:gravity="center"
             android:textSize="18sp"
+            android:fontFamily="@font/notosans_kr_bold"
+
+            android:gravity="center"
             android:background="@color/main_button"
 
             android:layout_marginTop="36dp"
-            android:paddingVertical="10dp"
 
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="@id/guide_rest_line1"
@@ -101,6 +102,7 @@
 
             android:text="@{timeM + `:` + timeS, default=`01:00`}"
             android:textSize="20sp"
+            android:fontFamily="@font/notosans_kr_bold"
             android:textColor="@color/white"
 
             app:layout_constraintBottom_toTopOf="@id/progress_rest"
@@ -130,6 +132,7 @@
             android:layout_height="wrap_content"
 
             android:text="휴식 건너 뛰기"
+            android:fontFamily="@font/notosans_kr_bold"
             android:background="@color/main_button"
 
             android:layout_marginBottom="115dp"

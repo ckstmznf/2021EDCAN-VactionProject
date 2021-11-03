@@ -57,11 +57,11 @@
 
             android:text="추가한 운동 목록"
             android:textSize="18sp"
+            android:fontFamily="@font/notosans_kr_bold"
 
             android:gravity="center"
             android:background="@color/main_button"
 
-            android:paddingVertical="11dp"
             android:layout_marginTop="60dp"
 
             app:layout_constraintTop_toTopOf="parent"
@@ -91,6 +91,7 @@
             android:text="+ 버튼을 눌러 운동을 추가해보세요!"
             android:textSize="20sp"
             android:textColor="@color/white"
+            android:fontFamily="@font/notosans_kr_bold"
 
             android:visibility="invisible"
 
