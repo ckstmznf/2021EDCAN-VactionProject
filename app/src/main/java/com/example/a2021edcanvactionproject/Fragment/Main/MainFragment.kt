@@ -31,7 +31,10 @@ class MainFragment : Fragment() {
         adapter = TodoListAdapter(todoData, true)
 
         val complete = todoData.filter { it.completion } as MutableList<Todo>
-        val todoCompletePresent = (complete.size.toFloat() / todoData.size.toFloat() * 100).roundToInt()
+        val todoCompletePresent = if(todoData.size != 0) (complete.size.toFloat() / todoData.size.toFloat() * 100).roundToInt() else {
+            binding.txtMainAddPls.visibility = View.VISIBLE
+            0
+        }
 
 
         binding.title = if(todoCompletePresent == 100) "오늘 계획 ${todoData.size}개 모두 완료!\n수고하셨습니다!"
