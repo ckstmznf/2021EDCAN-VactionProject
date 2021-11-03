@@ -45,16 +45,16 @@ class MainFragment : Fragment() {
 
     private fun initClickEvent(){
         with(binding){
-            btnMainLog.setOnClickListener {
-                Log.d("todoLog", DB.getData().toString())
-                Log.d("todoLog todoData", DB.getDataDay().toString())
-
-                Log.d("todoLog kinds", DB.getKinds().toString())
-            }
-
-            btnMainClear.setOnClickListener {
-                DB.clear()
-            }
+//            btnMainLog.setOnClickListener {
+//                Log.d("todoLog", DB.getData().toString())
+//                Log.d("todoLog todoData", DB.getDataDay().toString())
+//
+//                Log.d("todoLog kinds", DB.getKinds().toString())
+//            }
+//
+//            btnMainClear.setOnClickListener {
+//                DB.clear()
+//            }
         }
     }
 }
